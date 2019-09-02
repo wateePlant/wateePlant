@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <form action="#" class="form">
+                    <div class="form-group">
+                        <label for="name">
+                          Name:  <input type="text" id="name" class="form-control" >
+                    </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rfid">
+                             RFid:  <input type="text" id="rfid" class="form-control" >
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">
+                                 Uid:  <input type="text" id="uid" class="form-control" >
+                            </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">
+                                 Time:  <input type="text" id="time" class="form-control" >
+                            </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cost">
+                                     Cost:  <input type="text" id="cost" class="form-control" >
+                                </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cwater">
+                                 Cwater:  <input type="text" id="cwater" class="form-control" >
+                            </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nwater">
+                                 Nwater:  <input type="text" id="nwater" class="form-control" >
+                            </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">
+                                 Date:  <input type="text" id="date" class="form-control" >
+                            </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-info">Add</button>
+
+
+
+
+                </form>
+            </div>
+            <div class="col-md-7 mt-5">
+                <table class="table   text-center table-responsive  table-bordered ">
+                    <thead>
+                        <th>Name</th>
+                        <th>Rfid</th>
+                        <th>Uid</th>
+                        <th>Time</th>
+                        <th>Cost</th>
+                        <th>Cwater</th>
+                        <th>Nwater</th>
+                        <th>Date</th>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCwtmDeaD1MA-Wj5aPNxIPfyyraacxt5FQ",
+            authDomain: "water-plant-b6631.firebaseapp.com",
+            databaseURL: "https://water-plant-b6631.firebaseio.com",
+            projectId: "water-plant-b6631",
+            storageBucket: "water-plant-b6631.appspot.com",
+            messagingSenderId: "1057301842710",
+            appId: "1:1057301842710:web:64fddb60e05c996b"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
