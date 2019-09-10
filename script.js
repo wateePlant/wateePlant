@@ -1,10 +1,50 @@
+auth.onAuthStateChanged(user => {
+
+    if (user) {
+
+        $('#login-btn').css('display', 'none');
+        $('#logout-btn').css('display', 'block');
+        $('.login-display').css('display', 'block');
+        console.log('user logged in');
+    } else {
+
+        document.querySelector('#login-btn').style.display = 'inline';
+        document.querySelector('#logout-btn').style.display = 'none';
+        document.querySelector('.login-display').style.display = 'none';
+
+
+    }
+})
+
+//---------------------login---------------------------
+const loginform = document.querySelector('#modal-login');
+const login_modal = document.querySelector('.modal');
+loginform.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    //get user info
+    const email = document.getElementById('login-email').value
+    const password = document.getElementById('login-password').value;
+
+    //signin
+    auth.signInWithEmailAndPassword(email, password).then(user => {
+
+        console.log(user);
+
+
+
+
+    });
+});
+
+
 db.collection('users').onSnapshot(doc => {
     let changes = doc.docChanges();
 
     changes.forEach(ch => {
         if (ch.type == 'added') {
             let data = ch.doc.data();
-            console.log(data);
+
             render(data);
         }
     })
@@ -27,7 +67,7 @@ form.addEventListener('submit', e => {
     const cwater = $('#cwater').val();
     const nwater = $('#nwater').val();
     const date = $('#date').val();
-    console.log(name, rfid, uid, time, cost, cwater, nwater, date);
+
 
     db.collection('users').add({
         Name: name,
@@ -45,14 +85,29 @@ form.addEventListener('submit', e => {
 
 })
 
-/*db.collection('users').add({
-    Name: 'navi',
-    rfid: 'rf0003',
-    uid: 'wp0003',
-    time: '5:00',
-    cost: '600',
-    nwater: '10',
-    cwater: '5',
-    date: '05-10-2018'
 
-})*/
+// ---------------logout----------------------
+const logout = document.querySelector('#logout-btn');
+
+logout.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        firebase.auth().signOut().then(function() {
+            console.log('logged out')
+
+        }).catch(function(error) {
+
+        });
+
+    })
+    /*db.collection('users').add({
+        Name: 'navi',
+        rfid: 'rf0003',
+        uid: 'wp0003',
+        time: '5:00',
+        cost: '600',
+        nwater: '10',
+        cwater: '5',
+        date: '05-10-2018'
+
+    })*/
